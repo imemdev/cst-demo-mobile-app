@@ -1,8 +1,18 @@
-# CST mobile presentation demo
+# CST demo mobile app
 
-Open `index.html` in a browser. The app runs directly from disk, including its fonts and images. No install, account, server or internet connection is required.
+An offline, interactive HTML reconstruction of the CST mobile application shown in the engineering report.
 
-The report's **17 mobile states are rebuilt as HTML controls**, with a CSS phone frame and SVG map/gauge. No screenshot is rendered as an application screen. The only images used in the app are the original CST logo and warehouse photograph.
+![CST mobile monitoring demo](assets/demo-preview.png)
+
+## Presentation quick start
+
+1. Open [`index.html`](index.html) directly in a browser.
+2. Select **Focus mode**.
+3. Select **Run full demo**.
+
+The tour operates the real HTML controls: it types into inputs, submits forms, saves local records, assigns sensors and contacts, creates a device, and opens monitoring. It is not a screenshot slideshow.
+
+The app runs directly from disk, including its fonts and images. No install, account, server or internet connection is required. The report's **17 mobile states are rebuilt as HTML controls**, with a CSS phone frame and SVG map/gauge. No screenshot is rendered as an application screen.
 
 ## Presenting
 
@@ -47,6 +57,10 @@ mobile-demo/
 ```
 
 The scripts load in dependency order using `defer`. They share the small `window.CST` namespace, so the app also works under `file://` without module-loading restrictions. Screen functions receive state and return HTML; they do not own persistence. `app.js` handles actions and passes validated records to the store. `tour.js` clicks and fills those same controls rather than swapping images or bypassing saves.
+
+## Demo video
+
+To record the presentation clip, open the app in **Focus mode** and select **Run full demo**. Record the phone area for the full tour; this captures the real HTML interaction, validation, loading states, and live-gauge animation. The repository intentionally does not ship a pre-rendered slideshow in place of that recording.
 
 To change a color, edit `css/tokens.css`. To change a field, edit its view in `js/screens/` and its validation in `js/store.js`. To change initial records or the screen library, edit `js/data.js`. To change the automatic sequence, edit `steps` in `js/tour.js`.
 

@@ -3,7 +3,7 @@
 An offline, interactive HTML reconstruction of the CST mobile application shown in the engineering report.
 
 <div align="center">
-  <video src="./assets/demo-run-focus.mp4" controls width="360" aria-label="CST mobile app full demo in Focus mode"></video>
+  <video src="https://raw.githubusercontent.com/imemdev/cst-demo-mobile-app/feat/cst-demo-mobile-app/assets/demo-run-focus.mp4" controls width="360" aria-label="CST mobile app full demo in Focus mode"></video>
   <p><strong>Two-minute interactive demo · Focus mode</strong></p>
 </div>
 
@@ -70,7 +70,7 @@ The scripts load in dependency order using `defer`. They share the small `window
 
 ## Demo video
 
-[Download the two-minute Focus-mode demo video](assets/demo-run-focus.mp4)
+[Download the two-minute Focus-mode demo video](https://raw.githubusercontent.com/imemdev/cst-demo-mobile-app/feat/cst-demo-mobile-app/assets/demo-run-focus.mp4)
 
 To change a color, edit `css/tokens.css`. To change a field, edit its view in `js/screens/` and its validation in `js/store.js`. To change initial records or the screen library, edit `js/data.js`. To change the automatic sequence, edit `steps` in `js/tour.js`.
 

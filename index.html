@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>CST · Mobile application demo</title>
+    <link rel="icon" href="assets/cst-logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/shell.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/screens.css" />
+    <script defer src="js/data.js"></script>
+    <script defer src="js/store.js"></script>
+    <script defer src="js/icons.js"></script>
+    <script defer src="js/ui.js"></script>
+    <script defer src="js/screens/auth.js"></script>
+    <script defer src="js/screens/lists.js"></script>
+    <script defer src="js/screens/users.js"></script>
+    <script defer src="js/screens/companies.js"></script>
+    <script defer src="js/screens/rooms.js"></script>
+    <script defer src="js/screens/devices.js"></script>
+    <script defer src="js/screens/monitoring.js"></script>
+    <script defer src="js/app.js"></script>
+    <script defer src="js/tour.js"></script>
+  </head>
+  <body>
+    <header class="studio-header">
+      <a class="studio-brand" href="index.html" aria-label="CST demo home"
+        ><img src="assets/cst-logo.svg" alt="Canadian System Technology"
+      /></a>
+      <span class="studio-divider"></span
+      ><span class="studio-project"
+        >Sensor monitoring <span>/ Mobile demo</span></span
+      >
+      <div class="studio-actions">
+        <span class="local-status">Local simulation</span
+        ><button id="focus-toggle" class="studio-button" type="button">
+          Focus mode</button
+        ><button id="reset" class="studio-button" type="button">
+          Reset demo
+        </button>
+      </div>
+    </header>
+    <main class="studio">
+      <aside class="screen-library" aria-label="Report screen library">
+        <p class="overline">The application</p>
+        <h1>Every screen.<br />Fully interactive.</h1>
+        <p class="studio-intro">
+          Explore the report’s mobile interfaces or run the guided walkthrough.
+        </p>
+        <nav id="scene-nav" aria-label="Choose a report state"></nav>
+        <a class="readme-link" href="README.md">Project guide ↗</a>
+      </aside>
+      <section class="device-stage" aria-label="Mobile app preview">
+        <div class="phone-space" id="phone-space">
+          <div class="phone" id="phone">
+            <div class="side-key volume" aria-hidden="true"></div>
+            <div class="side-key power" aria-hidden="true"></div>
+            <div class="phone-screen" id="phone-screen">
+              <div class="phone-statusbar" aria-label="Demo phone status">
+                <time class="phone-time" datetime="09:41">9:41</time>
+                <span class="phone-camera" aria-hidden="true"></span>
+                <span
+                  class="phone-indicators"
+                  role="img"
+                  aria-label="Demo: full signal, Wi-Fi, battery 85 percent"
+                >
+                  <svg viewBox="0 0 20 16" aria-hidden="true">
+                    <path
+                      d="M1 15V12H4V15ZM6 15V9H9V15ZM11 15V5H14V15ZM16 15V1H19V15Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <svg viewBox="0 0 20 16" aria-hidden="true">
+                    <path
+                      d="M2 5a12 12 0 0 1 16 0M5 8a7.5 7.5 0 0 1 10 0M8 11a3 3 0 0 1 4 0"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                    <circle cx="10" cy="14" r="1.2" fill="currentColor" />
+                  </svg>
+                  <span class="phone-battery"><span></span></span>
+                </span>
+              </div>
+              <div class="phone-app-viewport">
+                <div id="app" aria-label="CST mobile application"></div>
+                <div
+                  id="toast"
+                  class="toast"
+                  role="status"
+                  aria-live="polite"
+                ></div>
+                <div id="modal-root"></div>
+              </div>
+              <nav class="phone-navigation" aria-label="Phone navigation">
+                <button
+                  type="button"
+                  data-action="device-back"
+                  aria-label="Back"
+                  title="Back"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M16 4 5 12l11 8Z" />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  data-action="device-home"
+                  aria-label="App home"
+                  title="App home"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="7" />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  data-action="device-menu"
+                  aria-label="App navigation"
+                  title="App navigation"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6 6v12M12 6v12M18 6v12" />
+                  </svg>
+                </button>
+              </nav>
+              <div
+                class="tour-pointer"
+                id="tour-pointer"
+                aria-hidden="true"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div class="device-caption">
+          <span class="small-dot"></span
+          ><span id="screen-caption">Authentication · Welcome back</span>
+        </div>
+      </section>
+      <aside class="director" aria-label="Presentation controls">
+        <p class="overline">Presentation controls</p>
+        <h2 id="chapter-title">Start with a sign-in.</h2>
+        <p id="chapter-description">
+          Type into the form. Show or hide the password. Sign in to explore the
+          application.
+        </p>
+        <div class="tour-controls">
+          <button id="tour-run" class="run-button" type="button">
+            ▶ Run full demo
+          </button>
+          <div class="tour-secondary">
+            <button
+              id="tour-pause"
+              class="studio-button"
+              type="button"
+              disabled
+            >
+              Pause</button
+            ><button
+              id="tour-stop"
+              class="studio-button"
+              type="button"
+              disabled
+            >
+              Stop</button
+            ><label class="speed-label"
+              >Speed<select id="tour-speed" aria-label="Demo speed">
+                <option value="1">1×</option>
+                <option value="1.5">1.5×</option>
+                <option value="2">2×</option>
+              </select></label
+            >
+          </div>
+        </div>
+        <div class="tour-progress"><div id="tour-progress-bar"></div></div>
+        <p id="tour-status" class="tour-status" role="status">
+          Ready · all 17 report states available
+        </p>
+        <div class="director-note">
+          <span class="overline">Try it yourself</span>
+          <p id="interaction-hint">
+            Use a sample email and any password with at least four characters.
+            No credentials are sent or saved.
+          </p>
+        </div>
+        <div class="source-note">
+          <p>Recreated from the report</p>
+          <span id="source-note">Authentication interface · chapter 3</span
+          ><small
+            >HTML controls, CSS layouts and SVG graphics. Data, login and live
+            readings are simulated locally.</small
+          >
+        </div>
+      </aside>
+    </main>
+    <noscript
+      >This demo requires JavaScript. No server, account or internet connection
+      is needed.</noscript
+    >
+  </body>
+</html>

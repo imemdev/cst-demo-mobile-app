@@ -1,0 +1,10 @@
+{
+  "name": "cst-mobile-report-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Offline HTML reconstruction of the CST report's mobile screens",
+  "scripts": {
+    "test": "node --test tests/*.test.cjs",
+    "check": "node scripts/check.cjs"
+  }
+}

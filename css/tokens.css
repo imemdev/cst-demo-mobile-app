@@ -1,0 +1,110 @@
+@font-face {
+  font-family: Inter;
+  src: url("../assets/inter.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+:root {
+  --ink: #1e293b;
+  --muted: #64748b;
+  --soft: #94a3b8;
+  --canvas: #f1f5f9;
+  --white: #fff;
+  --line: #d5deea;
+  --blue: #2862f2;
+  --purple: #5144ee;
+  --navy: #164675;
+  --red: #ff2525;
+  --green: #1fc557;
+  --orange: #ff7110;
+  --screen-width: 400px;
+  --screen-height: 870px;
+  --phone-width: calc(var(--screen-width) + 24px);
+  --phone-height: calc(var(--screen-height) + 24px);
+  --phone-safe-top: 54px;
+  --phone-safe-bottom: 48px;
+  --phone-scale: 0.8;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  font-family: Inter, Arial, sans-serif;
+  color: var(--ink);
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+button,
+a,
+input,
+select,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: default;
+}
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #98b9ff;
+  outline-offset: 3px;
+}
+input:focus,
+select:focus {
+  outline: none;
+}
+svg {
+  display: block;
+}
+button svg {
+  pointer-events: none;
+}
+button {
+  color: inherit;
+}
+img {
+  max-width: 100%;
+}
+[hidden] {
+  display: none !important;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.muted {
+  color: var(--muted);
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

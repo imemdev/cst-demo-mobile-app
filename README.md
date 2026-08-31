@@ -2,17 +2,27 @@
 
 An offline, interactive HTML reconstruction of the CST mobile application shown in the engineering report.
 
-![CST mobile monitoring demo](assets/demo-preview.png)
+<div align="center">
+  <video src="./assets/demo-run-focus.mp4" controls width="360" aria-label="CST mobile app full demo in Focus mode"></video>
+  <p><strong>Two-minute interactive demo · Focus mode</strong></p>
+</div>
 
-## Presentation quick start
+The tour operates the real HTML controls: it types into inputs, submits forms, saves local records, assigns sensors and contacts, creates a device, and opens monitoring. It is not a screenshot slideshow.
+
+<details>
+<summary>Quick setup</summary>
 
 1. Open [`index.html`](index.html) directly in a browser.
 2. Select **Focus mode**.
 3. Select **Run full demo**.
 
-The tour operates the real HTML controls: it types into inputs, submits forms, saves local records, assigns sensors and contacts, creates a device, and opens monitoring. It is not a screenshot slideshow.
+</details>
 
 The app runs directly from disk, including its fonts and images. No install, account, server or internet connection is required. The report's **17 mobile states are rebuilt as HTML controls**, with a CSS phone frame and SVG map/gauge. No screenshot is rendered as an application screen.
+
+## Preview
+
+<img src="./assets/demo-preview.png" alt="CST mobile monitoring demo" width="320" />
 
 ## Presenting
 
@@ -60,11 +70,7 @@ The scripts load in dependency order using `defer`. They share the small `window
 
 ## Demo video
 
-The full Focus-mode tour is recorded below. It is the real HTML demo running through the report states, validation, loading states, and live-gauge animation—not a screenshot slideshow.
-
-<video src="assets/demo-run-focus.mp4" controls width="420" aria-label="CST mobile app full demo in Focus mode"></video>
-
-[Download the two-minute demo video](assets/demo-run-focus.mp4)
+[Download the two-minute Focus-mode demo video](assets/demo-run-focus.mp4)
 
 To change a color, edit `css/tokens.css`. To change a field, edit its view in `js/screens/` and its validation in `js/store.js`. To change initial records or the screen library, edit `js/data.js`. To change the automatic sequence, edit `steps` in `js/tour.js`.
 

@@ -60,7 +60,11 @@ The scripts load in dependency order using `defer`. They share the small `window
 
 ## Demo video
 
-To record the presentation clip, open the app in **Focus mode** and select **Run full demo**. Record the phone area for the full tour; this captures the real HTML interaction, validation, loading states, and live-gauge animation. The repository intentionally does not ship a pre-rendered slideshow in place of that recording.
+The full Focus-mode tour is recorded below. It is the real HTML demo running through the report states, validation, loading states, and live-gauge animation—not a screenshot slideshow.
+
+<video src="assets/demo-run-focus.mp4" controls width="420" aria-label="CST mobile app full demo in Focus mode"></video>
+
+[Download the two-minute demo video](assets/demo-run-focus.mp4)
 
 To change a color, edit `css/tokens.css`. To change a field, edit its view in `js/screens/` and its validation in `js/store.js`. To change initial records or the screen library, edit `js/data.js`. To change the automatic sequence, edit `steps` in `js/tour.js`.
 
